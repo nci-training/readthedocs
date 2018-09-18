@@ -2,23 +2,23 @@ Common tools
 =============
 
 
-ncdump
---------
+.. ncdump
+.. --------
 
-gdal
------
-
-ferret
--------
-
-cdo
-----
-
-nco
-----
-
-paraview
----------
+.. gdal
+.. -----
+..
+.. ferret
+.. -------
+..
+.. cdo
+.. ----
+.. 
+.. nco
+.. ----
+..
+.. paraview
+.. ---------
 
 Using GSKY
 ===========
@@ -33,4 +33,4 @@ Earth Observations
 ===================
 
 Visualising data
-================== 
+==================
