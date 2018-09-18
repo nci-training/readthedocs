@@ -91,9 +91,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../MT_data_examples.html">Magnetotellurics (MT) data examples</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Jupyter notebooks</span></p>
+<p class="caption"><span class="caption-text">MT Jupyter notebooks</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="ascii_to_netCDF.html">Converting ASCII time series to NetCDF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ascii_to_netCDF.html">Converting MT ASCII time series to NetCDF</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">MT processing using OPeNDAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Converting-BIRRP-output-to-EDI-file">Converting BIRRP output to EDI file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#MTpy-plotting-from-EDI">MTpy plotting from EDI</a></li>
@@ -409,14 +409,14 @@ THREDDS data server.</strong></p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">working_dir</span> <span class="o">=</span> <span class="s1">&#39;/g/data3/my80/States_and_Territories/test/TS/example_TS_ascii_to_netcdf&#39;</span>
+<span></span><span class="n">working_dir</span> <span class="o">=</span> <span class="s1">&#39;/g/data/my80/sandbox/ascii_to_netcdf_test/&#39;</span>
 <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">working_dir</span><span class="p">)</span>
 <span class="n">TS_path</span> <span class="o">=</span> <span class="s1">&#39;http://dapds00.nci.org.au/thredds/dodsC/uc0/my80_dev/netCDF_test.nc&#39;</span>
 <span class="n">TS</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">TS_path</span><span class="p">)</span>
 
 <span class="c1">### Uncomment line below if you want to use the local path:</span>
 
-<span class="c1">#TS_path = &#39;/g/data/my80/States_and_Territories/test/TS/example_TS_ascii_to_netcdf/netCDF_test.nc&#39;</span>
+<span class="c1">#TS_path = &#39;/g/data/my80/sandbox/ascii_to_netcdf_test/netCDF_test.nc&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -873,7 +873,7 @@ extract the birrpstring given in our netCDF file:</strong></p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># directory where MTpy is installed</span>
+<span></span><span class="c1">## change this to the directory where MTpy is installed</span>
 <span class="n">mtpy_directory</span> <span class="o">=</span> <span class="s1">&#39;/short/z00/nre900/MT/mtpy/&#39;</span>
 
 <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">mtpy_directory</span><span class="p">)</span>
@@ -965,7 +965,7 @@ extract the birrpstring given in our netCDF file:</strong></p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">edi</span> <span class="o">=</span> <span class="s1">&#39;/g/data3/my80/States_and_Territories/test/TS/example_TS_ascii_to_netcdf/c01_netcdf.edi&#39;</span>
+<span></span><span class="n">edi</span> <span class="o">=</span> <span class="s1">&#39;/g/data/my80/sandbox/ascii_to_netcdf_test/c01_netcdf.edi&#39;</span>
 </pre></div>
 </div>
 </div>
