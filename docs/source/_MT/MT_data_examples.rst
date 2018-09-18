@@ -4,12 +4,10 @@
 
 .. role:: green
 
+.. image:: http://nci.org.au/wp-content/themes/nci/img/img-logo-large.png
 
-The following material uses `The University of Adelaide Magnetotellurics Data Collection`_ which is available under the `Creative Commons License 4.0`_.
-
-..  _The University of Adelaide Magnetotellurics Data Collection: https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/metadata/f4237_9555_3315_5547
-..  _Creative Commons License 4.0: https://creativecommons.org/licenses/by/4.0/
-
+\
+\
 
 Accessing MT data from the NCI Geonetwork
 ==========================================
@@ -74,7 +72,7 @@ The following MT software:
 .. _MARE2DEM: http://mare2dem.ucsd.edu/
 .. _ModEM: http://blogs.oregonstate.edu/modem3dmt/
 
-are locally installed on Raijin and NCI's Virtual Desktop Infrastructure (VDI) (currently under the project my80).
+are locally installed on NCI's Raijin Supercomputer and Virtual Desktop Infrastructure (VDI) (currently under the project my80).
 
 **NOTE:** To join the project **my80**, please log into `mancini`_\ , click on the *Projects and groups* tab, then click on the *Find project or group* tab. Search for
 **my80** and request to join.
@@ -113,8 +111,7 @@ BIRRP conditions of use:
 ModEM conditions of use:
 -------------------------
 
-AUTHORS
-+++++++
+**AUTHORS**
 
   | Gary Egbert, Anna Kelbert & Naser Meqbel
   | College of Atmospheric and Oceanic Sciences
@@ -127,8 +124,7 @@ AUTHORS
   | Ph.:     (541) 737-2947
   | http://www.coas.oregonstate.edu
 
-COPYRIGHT
-+++++++++
+**COPYRIGHT**
 
 Both binary and source codes for the Modular Electromagnetic Inversion Software
 (hereafter ModEM) are copyrighted by The State of Oregon acting by and through
@@ -138,8 +134,8 @@ Corvallis, Oregon 97331-2140 (hereafter, OSU) and ownership of all right, title
 and interest in and to the Software remains with OSU.
 By using or copying the ModEM, User agrees to abide by the terms of this Agreement.
 
-NONCOMMERCIAL USE
-++++++++++++++++++
+**NONCOMMERCIAL USE**
+
 
 OSU grants to you (hereafter, User) a royalty-free, nonexclusive right to execute,
 copy, modify and distribute both the binary and source code solely for academic,
@@ -184,8 +180,7 @@ research and other similar noncommercial uses, subject to the following conditio
   7.	This Agreement shall be governed and construed in accordance with the laws
   of the State of Oregon.
 
-COMMERCIAL USE
-+++++++++++++++
+**COMMERCIAL USE**
 
 Any User wishing to make a COMMERCIAL USE of the Software must contact the lead
 author at egbert@coas.oregonstate.edu to arrange an appropriate license.
@@ -197,8 +192,8 @@ for sale or license by, or on behalf of, User to third parties, or
 a commercial product sold or licensed by, or on behalf of, User.
 
 
-Using MT software on Raijin
---------------------------------
+MT software on Raijin
+=========================
 
 In order to use the Raijin MT software, let's first login to Raijin::
 
@@ -223,10 +218,15 @@ Run the following command in your terminal::
 You should now be able to load the following MT modules::
 
   $ module load birrp
+
   $ module load occam1DCSEM
+
   $ module load dipole1D
+
   $ module load occam2D
+
   $ module load mare2DEM
+
   $ module load modem
 
 Once these modules are loaded, to run **BIRRP**::
@@ -404,9 +404,9 @@ Once we are happy with the quality of our time-series, the next step is to run o
 
 For those unfamiliar, the BIRRP program computes magnetotelluric and geomagnetic depth sounding response functions using a bounded influence, remote reference method, along with an implementation of the jackknife to get error estimates on the result. It incorporates a method for controlling leverage points (i.e., magnetic field values which are statistically anomalous), includes the implementation of two stage processing which enables removal of outliers in both the local electric and magnetic field variables, and allows multiple remote reference sites to be used.
 
-For more information about BIRRP and links to the relevant literature, please visit `here`_
+For more information about BIRRP and links to the relevant literature, please visit `here`__
 
-.. _here: http://www.whoi.edu/science/AOPE/people/achave/Site/Next1.html
+__ http://www.whoi.edu/science/AOPE/people/achave/Site/Next1.html
 
 Using BIRRP on the VDI
 +++++++++++++++++++++++
@@ -657,3 +657,102 @@ ModEM 3D inversions
 :blue:`Modular EM (ModEM) is a flexible electromagnetic modelling and inversion program written in Fortran 95.`
 
 It is currently available to use with 2D and 3D MT problems. For more information about ModEM, please read:
+
+Kelbert, A., Meqbel, N., Egbert, G.D. and Tandon, K., 2014. ModEM: A modular system for inversion of electromagnetic geophysical data. Computers & Geosciences, 66, pp.40-53. - `Kelbert et al. link`_
+
+Egbert, G.D. and Kelbert, A., 2012. Computational recipes for electromagnetic inverse problems. Geophysical Journal International, 189(1), pp.251-267. - `Egbert and Kelbert link`_
+
+.. _Kelbert et al. link: https://geomag.usgs.gov/downloads/publications/1-s2.0-S0098300414000211-main.pdf
+
+.. _Egbert and Kelbert link: https://geomag.usgs.gov/downloads/publications/Geophys.%20J.%20Int.-2012-Egbert-251-67.pdf
+
+Let's test the serial and parallel **Mod3DMT** codes on the VDI and Raijin for the *ObliqueOne Inversion* dataset given in the *examples* folder of the ModEM software.
+
+**Test 1: Serial Mod3dMT on the VDI**
+
+::
+
+  $ cd /g/data/my80/sandbox/modem_test/ObliqueOne/INV/
+
+  $ module load modem
+
+  $ mod3DMT -I NLCG  50_2x2_for_ObliqueOne.model Z_10_5_16p_100st_ObliqueOne_Noise50.data Inv_para.dat FWD_para.dat x02_y02_z02.cov
+
+  or
+
+  $ source my_script
+
+The job execution time for this script was 1180m29s (almost 20 hours).
+
+**Test 2: Parallel Mod3dMT_MPI on Raijin**
+
+In order to use the Mod3DMT_MPI code, you will have join the group ModEM-geophys via NCI's `mancini`_\ page. Once you have been granted access to this group::
+
+    $ cd /g/data/my80/sandbox/modem_test/ObliqueOne/INV3/
+
+To run Mod3dMT_MPI, we need to create a shell script. For this example, let's use the normal cue, 32 cups, 4GB memory and a walltime of 10 minutes::
+
+  #!/bin/bash
+
+  #PBS -P <project code>
+  #PBS -q normal
+  #PBS -l walltime=0:10:00,mem=4GB,ncpus=32,jobfs=100MB
+  #PBS -l wd
+
+  export OMP_NUM_THREADS=2
+
+  module load openmpi/1.10.2
+  module load intel-mkl/15.0.3.187
+  module load ModEM-geophysics/2013.06
+
+  mpirun -np 16 --map-by slot:PE=$OMP_NUM_THREADS /apps/ModEM-geophysics/2013.06/bin/Mod3DMT_MPI -I NLCG 50_2x2_for_ObliqueOne.model Z_10_5_16p_100st_ObliqueOne_Noise50.data Inv_para.dat FWD_para.dat x02_y02_z02.cov -v debug -P './tmpvec' > mod3dmt_oblique_test.out.$PBS_JOBID
+
+To run this shell script::
+
+  $ qsub < mod3dmt_shell_script >
+
+
+Experiment with some of the following commands to monitor the progress of this job::
+
+  $ qstat -u $USER
+
+  $ qstat -sw <jobID>
+
+  $ qstat -E <jobID1,...>
+
+  $ qstat -f <jobID>
+
+  $ qcat -s <jobID>
+
+  $ qcat -e <jobID>
+
+  $ qcat -o <jobID>
+
+  $ qls <jobID>
+
+  $ qcp <jobID>/* ./
+
+  $ qps <jobID>
+
+  $ nqstat_anu <jobID>
+
+Once this job is complete, to see the stats::
+
+  $ qstat -u $USER -x
+
+  $ qstat -sw <jobID> -x
+
+  $ qstat -fx <jobID>
+
+Additionally, 8 hours after the job is complete, the job stats should be available `here`__
+
+__ https://usersupport.nci.org.au/report/job_history
+
+The job execution time for this script was 7m51s. For this example, using Mod3DMT_MPI on Raijin produces results almost 170 times faster than using the serial Mod3DMT on the VDI.
+
+----------
+
+**This material uses** `The University of Adelaide Magnetotellurics Data Collection`_ **which is available under the** `Creative Commons License 4.0`_.
+
+..  _The University of Adelaide Magnetotellurics Data Collection: https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/metadata/f4237_9555_3315_5547
+..  _Creative Commons License 4.0: https://creativecommons.org/licenses/by/4.0/

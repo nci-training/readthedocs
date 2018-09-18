@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installing Jupyter and Python" href="_userguide/install_jupyter.html" /> 
+    <link rel="next" title="Common tools" href="_overview/overview.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -78,15 +78,23 @@
               
             
             
-              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="_userguide/install_jupyter.html">Software setup for Jupyter notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_overview/overview.html">Common tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_overview/overview.html#using-gsky">Using GSKY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_overview/overview.html#using-thredds">Using THREDDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_overview/overview.html#climate">Climate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_overview/overview.html#earth-observations">Earth Observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_overview/overview.html#visualising-data">Visualising data</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Data access, processing and manipulation at NCI</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="_MT/MT_data_examples.html">Accessing MT data from the NCI Geonetwork</a></li>
-<li class="toctree-l1"><a class="reference internal" href="_MT/MT_data_examples.html#mt-software-available-at-nci">MT software available at NCI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="_MT/MT_data_examples.html#mt-software-on-the-nci-virtual-desktop-infrastructure-vdi">MT software on the NCI Virtual Desktop Infrastructure (VDI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_MT/MT_data_examples.html">Magnetotellurics (MT) data examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Jupyter notebooks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="_MT/MT_notebooks/ascii_to_netCDF.html">Converting ASCII time series to NetCDF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_MT/MT_notebooks/MT_with_OPENDAP.html">MT processing using OPeNDAP</a></li>
 </ul>
 
             
@@ -151,38 +159,66 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <a class="reference internal image-reference" href="_images/NCI_logo.jpg"><img alt="_images/NCI_logo.jpg" src="_images/NCI_logo.jpg" style="width: 300px;" /></a>
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<a class="reference internal image-reference" href="_images/NCI_logo.jpg"><img alt="_images/NCI_logo.jpg" src="_images/NCI_logo.jpg" style="width: 300px;" /></a>
 <div class="section" id="welcome-to-nci-training-documentation">
 <h1>Welcome to NCI training documentation!<a class="headerlink" href="#welcome-to-nci-training-documentation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">User Guide</span></p>
+<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="_userguide/install_jupyter.html">Software setup for Jupyter notebook</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="_userguide/install_jupyter.html#installing-miniconda-and-anaconda-on-macos">Installing Miniconda and Anaconda on macOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_userguide/install_jupyter.html#installing-jupyter">Installing Jupyter:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_userguide/install_jupyter.html#clone-gsky-jupyter-notebooks">Clone GSKY Jupyter notebooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_userguide/install_jupyter.html#setting-up-virtual-environment">Setting up virtual environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_userguide/install_jupyter.html#running-notebooks">Running notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_overview/overview.html">Common tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_overview/overview.html#ncdump">ncdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_overview/overview.html#gdal">gdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_overview/overview.html#ferret">ferret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_overview/overview.html#cdo">cdo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_overview/overview.html#nco">nco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_overview/overview.html#paraview">paraview</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="_overview/overview.html#using-gsky">Using GSKY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_overview/overview.html#using-thredds">Using THREDDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_overview/overview.html#climate">Climate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_overview/overview.html#earth-observations">Earth Observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_overview/overview.html#visualising-data">Visualising data</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Data access, processing and manipulation at NCI</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="_MT/MT_data_examples.html">Accessing MT data from the NCI Geonetwork</a></li>
-<li class="toctree-l1"><a class="reference internal" href="_MT/MT_data_examples.html#mt-software-available-at-nci">MT software available at NCI</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="_MT/MT_data_examples.html#birrp-conditions-of-use">BIRRP conditions of use:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_MT/MT_data_examples.html#modem-conditions-of-use">ModEM conditions of use:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_MT/MT_data_examples.html#using-mt-software-on-raijin">Using MT software on Raijin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_MT/MT_data_examples.html">Magnetotellurics (MT) data examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_MT/MT_data_examples.html#accessing-mt-data-from-the-nci-geonetwork">Accessing MT data from the NCI Geonetwork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_MT/MT_data_examples.html#mt-software-available-at-nci">MT software available at NCI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_MT/MT_data_examples.html#mt-software-on-raijin">MT software on Raijin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_MT/MT_data_examples.html#mt-software-on-the-nci-virtual-desktop-infrastructure-vdi">MT software on the NCI Virtual Desktop Infrastructure (VDI)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="_MT/MT_data_examples.html#mt-software-on-the-nci-virtual-desktop-infrastructure-vdi">MT software on the NCI Virtual Desktop Infrastructure (VDI)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="_MT/MT_data_examples.html#time-series-qc-using-snuffler-a-miniseed-time-series-visualisation-tool">Time-series QC using snuffler, a miniSEED time-series visualisation tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_MT/MT_data_examples.html#running-the-bounded-influence-remote-reference-processing-birrp-code-on-nci-s-vdi-and-raijin">Running the Bounded Influence, Remote Reference Processing (BIRRP) code on NCI’s VDI and Raijin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_MT/MT_data_examples.html#installing-and-using-mtpy-on-the-vdi">Installing and using MTpy on the VDI</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Jupyter notebooks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="_MT/MT_notebooks/ascii_to_netCDF.html">Converting ASCII time series to NetCDF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_MT/MT_notebooks/MT_with_OPENDAP.html">MT processing using OPeNDAP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_MT/MT_notebooks/MT_with_OPENDAP.html#Converting-BIRRP-output-to-EDI-file">Converting BIRRP output to EDI file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_MT/MT_notebooks/MT_with_OPENDAP.html#MTpy-plotting-from-EDI">MTpy plotting from EDI</a></li>
 </ul>
 </li>
 </ul>
@@ -197,7 +233,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="_userguide/install_jupyter.html" class="btn btn-neutral float-right" title="Installing Jupyter and Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="_overview/overview.html" class="btn btn-neutral float-right" title="Common tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>

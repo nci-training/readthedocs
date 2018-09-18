@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Common tools &mdash; NCI training 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="" href="../_MT/MT_data_examples.html" />
+    <link rel="prev" title="Welcome to NCI training documentation!" href="../index.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> NCI training
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Common tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ncdump">ncdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gdal">gdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ferret">ferret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cdo">cdo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nco">nco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#paraview">paraview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#using-gsky">Using GSKY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#using-thredds">Using THREDDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#climate">Climate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#earth-observations">Earth Observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#visualising-data">Visualising data</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Data access, processing and manipulation at NCI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../_MT/MT_data_examples.html">Magnetotellurics (MT) data examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Jupyter notebooks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../_MT/MT_notebooks/ascii_to_netCDF.html">Converting ASCII time series to NetCDF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_MT/MT_notebooks/MT_with_OPENDAP.html">MT processing using OPeNDAP</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NCI training</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Common tools</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/_overview/overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="common-tools">
+<h1>Common tools<a class="headerlink" href="#common-tools" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ncdump">
+<h2>ncdump<a class="headerlink" href="#ncdump" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="gdal">
+<h2>gdal<a class="headerlink" href="#gdal" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="ferret">
+<h2>ferret<a class="headerlink" href="#ferret" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="cdo">
+<h2>cdo<a class="headerlink" href="#cdo" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="nco">
+<h2>nco<a class="headerlink" href="#nco" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="paraview">
+<h2>paraview<a class="headerlink" href="#paraview" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="using-gsky">
+<h1>Using GSKY<a class="headerlink" href="#using-gsky" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="using-thredds">
+<h1>Using THREDDS<a class="headerlink" href="#using-thredds" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="climate">
+<h1>Climate<a class="headerlink" href="#climate" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="earth-observations">
+<h1>Earth Observations<a class="headerlink" href="#earth-observations" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="visualising-data">
+<h1>Visualising data<a class="headerlink" href="#visualising-data" title="Permalink to this headline">¶</a></h1>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../_MT/MT_data_examples.html" class="btn btn-neutral float-right" title="" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Welcome to NCI training documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, NCI.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
