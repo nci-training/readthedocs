@@ -95,8 +95,8 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="ascii_to_netCDF.html">Converting MT ASCII time series to NetCDF</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">MT processing using OPeNDAP</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Converting-BIRRP-output-to-EDI-file">Converting BIRRP output to EDI file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#MTpy-plotting-from-EDI">MTpy plotting from EDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Converting-BIRRP-outputs-to-an-EDI-file">Converting BIRRP outputs to an EDI file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Plotting-EDI-using-MTpy">Plotting EDI using MTpy</a></li>
 </ul>
 </li>
 </ul>
@@ -593,11 +593,11 @@ CPU times: user 12 ms, sys: 38 ms, total: 50 ms
 Wall time: 1min 23s
 </pre></div></div>
 </div>
-<p><strong>A convienent tool for visualising time-series is
-`snuffler &lt;https://pyrocko.org/v0.3/apps_snuffler_manual.html&gt;`__. In
-order to convert our TS to
-`miniSEED &lt;https://ds.iris.edu/ds/nodes/dmc/data/formats/miniseed/&gt;`__
-format, we must first add header information to our ascii files:</strong></p>
+<p><strong>A convienent tool for visualising time-series is</strong>
+<a class="reference external" href="https://pyrocko.org/v0.3/apps_snuffler_manual.html">snuffler</a>. <strong>In
+order to convert our TS to</strong>
+<a class="reference external" href="https://ds.iris.edu/ds/nodes/dmc/data/formats/miniseed/">miniSEED</a>
+<strong>format, we must first add header information to our ascii files:</strong></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [9]:
@@ -693,9 +693,10 @@ CPU times: user 7 ms, sys: 42 ms, total: 49 ms
 Wall time: 1.3 s
 </pre></div></div>
 </div>
-<p><strong>We can convert our time series ASCII files to miniseed using the IRIS
-`ascii2mseed &lt;https://seiscode.iris.washington.edu/projects/ascii2mseed&gt;`__
-code:</strong></p>
+<p><strong>We can convert our time series ASCII files to miniseed using the
+IRIS</strong>
+<a class="reference external" href="https://seiscode.iris.washington.edu/projects/ascii2mseed">ascii2mseed</a>
+<strong>code:</strong></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [13]:
@@ -816,8 +817,8 @@ extract the birrpstring given in our netCDF file:</strong></p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="Converting-BIRRP-output-to-EDI-file">
-<h2>Converting BIRRP output to EDI file<a class="headerlink" href="#Converting-BIRRP-output-to-EDI-file" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Converting-BIRRP-outputs-to-an-EDI-file">
+<h2>Converting BIRRP outputs to an EDI file<a class="headerlink" href="#Converting-BIRRP-outputs-to-an-EDI-file" title="Permalink to this headline">¶</a></h2>
 <p><strong>Let’s extract and write the BIRRP config file from our netCDF file:</strong></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
@@ -919,8 +920,8 @@ extract the birrpstring given in our netCDF file:</strong></p>
 </div>
 </div>
 </div>
-<div class="section" id="MTpy-plotting-from-EDI">
-<h2>MTpy plotting from EDI<a class="headerlink" href="#MTpy-plotting-from-EDI" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Plotting-EDI-using-MTpy">
+<h2>Plotting EDI using MTpy<a class="headerlink" href="#Plotting-EDI-using-MTpy" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [24]:
