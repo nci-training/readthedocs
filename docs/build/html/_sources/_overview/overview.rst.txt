@@ -1,36 +1,6 @@
-Common tools
-=============
+Overview
+==========
+
+NCI's training documentation provides tutorials on how to use common tools and services to access, process and manipulate data collections stored at NCI.
 
 
-.. ncdump
-.. --------
-
-.. gdal
-.. -----
-..
-.. ferret
-.. -------
-..
-.. cdo
-.. ----
-.. 
-.. nco
-.. ----
-..
-.. paraview
-.. ---------
-
-Using GSKY
-===========
-
-Using THREDDS
-==============
-
-Climate
-========
-
-Earth Observations
-===================
-
-Visualising data
-==================

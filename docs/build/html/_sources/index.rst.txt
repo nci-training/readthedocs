@@ -1,24 +1,21 @@
 .. NCI training documentation master file,
    created on Fri Sep 14 10:46:00 2018.
 
+
 .. image:: _static/images/NCI_logo.jpg
   :width: 300
 
-Welcome to NCI training documentation!
+Welcome to NCI training documentation
 ========================================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   Overview of NCI training <_overview/overview>
+Our training documentation provides tutorials on how to use commonly available tools and services to access, process and manipulate data collections stored at NCI.
 
 
 .. toctree::
-   :caption: Data access, processing and manipulation at NCI
+   :caption: Data access, processing and manipulation examples
    :maxdepth: 2
 
-   Magnetotellurics (MT) data examples <_MT/MT_data_examples>
+   Magnetotellurics (MT) data <_MT/MT_data_examples>
 
 .. toctree::
   :caption: MT Jupyter notebooks
