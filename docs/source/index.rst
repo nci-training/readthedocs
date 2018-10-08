@@ -21,5 +21,5 @@ Our training documentation provides tutorials on how to use commonly available t
   :caption: MT Jupyter notebooks
   :maxdepth: 2
 
-  Converting MT ASCII time series to NetCDF <_MT/MT_notebooks/ascii_to_netCDF>
-  MT processing using OPeNDAP <_MT/MT_notebooks/MT_with_OPENDAP>
+  Converting MT ASCII time series to NetCDF <_MT/MT_notebooks/ascii_to_netCDFb>
+  MT processing using OPeNDAP <_MT/MT_notebooks/MT_with_OPENDAPb>
