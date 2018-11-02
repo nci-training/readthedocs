@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Convert MT time-series to netCDF example" href="MT_notebooks/ascii_to_netCDF.html" />
+    <link rel="next" title="Convert MT time-series to netCDF example" href="MT_notebooks/ascii_to_netCDFb.html" />
     <link rel="prev" title="Welcome to NCI training documentation" href="../index.html" /> 
 
   
@@ -105,8 +105,8 @@
 </ul>
 <p class="caption"><span class="caption-text">MT Jupyter notebooks</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="MT_notebooks/ascii_to_netCDF.html">Converting MT ASCII time series to NetCDF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MT_notebooks/MT_with_OPENDAP.html">MT processing using OPeNDAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MT_notebooks/ascii_to_netCDFb.html">Converting MT ASCII time series to NetCDF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MT_notebooks/MT_with_OPENDAPb.html">MT processing using OPeNDAP</a></li>
 </ul>
 
             
@@ -717,14 +717,14 @@ $ python setup.py develop
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">mtpy.processing.birrp</span> <span class="kn">as</span> <span class="nn">birrp</span>
 </pre></div>
 </div>
-<p>If this works than MTpy has been successfully installed.</p>
+<p>If this works then MTpy has been successfully installed.</p>
 </div>
 <div class="section" id="modem-3d-inversions">
 <h3>ModEM 3D inversions<a class="headerlink" href="#modem-3d-inversions" title="Permalink to this headline">¶</a></h3>
 <p><span class="blue">Modular EM (ModEM) is a flexible electromagnetic modelling and inversion program written in Fortran 95.</span></p>
 <p>It is currently available to use with 2D and 3D MT problems. For more information about ModEM, please read:</p>
-<p>Kelbert, A., Meqbel, N., Egbert, G.D. and Tandon, K., 2014. ModEM: A modular system for inversion of electromagnetic geophysical data. Computers &amp; Geosciences, 66, pp.40-53. - <a class="reference external" href="https://geomag.usgs.gov/downloads/publications/1-s2.0-S0098300414000211-main.pdf">Kelbert et al. link</a></p>
-<p>Egbert, G.D. and Kelbert, A., 2012. Computational recipes for electromagnetic inverse problems. Geophysical Journal International, 189(1), pp.251-267. - <a class="reference external" href="https://geomag.usgs.gov/downloads/publications/Geophys.%20J.%20Int.-2012-Egbert-251-67.pdf">Egbert and Kelbert link</a></p>
+<p>Kelbert, A., Meqbel, N., Egbert, G.D. and Tandon, K., 2014. ModEM: A modular system for inversion of electromagnetic geophysical data. Computers &amp; Geosciences, 66, pp.40-53. - <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0098300414000211">Kelbert et al. link</a></p>
+<p>Egbert, G.D. and Kelbert, A., 2012. Computational recipes for electromagnetic inverse problems. Geophysical Journal International, 189(1), pp.251-267. - <a class="reference external" href="https://onlinelibrary.wiley.com/doi/full/10.1111/j.1365-246X.2011.05347.x">Egbert and Kelbert link</a></p>
 <p>Let’s test the serial and parallel <strong>Mod3DMT</strong> codes on the VDI and Raijin for the <em>ObliqueOne Inversion</em> dataset given in the <em>examples</em> folder of the ModEM software.</p>
 <p><strong>Test 1: Serial Mod3dMT on the VDI</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd /g/data/my80/sandbox/modem_test/ObliqueOne/INV/
@@ -813,7 +813,7 @@ $ qstat -fx &lt;jobID&gt;
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="MT_notebooks/ascii_to_netCDF.html" class="btn btn-neutral float-right" title="Convert MT time-series to netCDF example" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="MT_notebooks/ascii_to_netCDFb.html" class="btn btn-neutral float-right" title="Convert MT time-series to netCDF example" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../index.html" class="btn btn-neutral" title="Welcome to NCI training documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -650,7 +650,7 @@ To test, open up an ipython terminal:
 
   In [1]: import mtpy.processing.birrp as birrp
 
-If this works than MTpy has been successfully installed.
+If this works then MTpy has been successfully installed.
 
 ModEM 3D inversions
 --------------------
@@ -662,9 +662,9 @@ Kelbert, A., Meqbel, N., Egbert, G.D. and Tandon, K., 2014. ModEM: A modular sys
 
 Egbert, G.D. and Kelbert, A., 2012. Computational recipes for electromagnetic inverse problems. Geophysical Journal International, 189(1), pp.251-267. - `Egbert and Kelbert link`_
 
-.. _Kelbert et al. link: https://geomag.usgs.gov/downloads/publications/1-s2.0-S0098300414000211-main.pdf
+.. _Kelbert et al. link: https://www.sciencedirect.com/science/article/pii/S0098300414000211
 
-.. _Egbert and Kelbert link: https://geomag.usgs.gov/downloads/publications/Geophys.%20J.%20Int.-2012-Egbert-251-67.pdf
+.. _Egbert and Kelbert link: https://onlinelibrary.wiley.com/doi/full/10.1111/j.1365-246X.2011.05347.x
 
 Let's test the serial and parallel **Mod3DMT** codes on the VDI and Raijin for the *ObliqueOne Inversion* dataset given in the *examples* folder of the ModEM software.
 
