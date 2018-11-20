@@ -70,7 +70,7 @@ The following MT software:
 .. _DIPOLE1D: http://marineemlab.ucsd.edu/Projects/Occam/1DCSEM/
 .. _OCCAM2DMT: http://marineemlab.ucsd.edu/Projects/Occam/2DMT/index.html
 .. _MARE2DEM: http://mare2dem.ucsd.edu/
-.. _ModEM: http://blogs.oregonstate.edu/modem3dmt/
+.. _ModEM: http://www.modem-geophysics.com/
 
 are locally installed on NCI's Raijin Supercomputer and Virtual Desktop Infrastructure (VDI) (currently under the project my80).
 
