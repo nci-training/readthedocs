@@ -4,9 +4,9 @@
 
 .. role:: green
 
-.. image:: http://nci.org.au/wp-content/themes/nci/img/img-logo-large.png
+.. image:: https://nci.org.au/sites/default/files/logos/Logo-NCI.svg
+   :width: 300
 
-\
 \
 
 Accessing MT data from the NCI Geonetwork

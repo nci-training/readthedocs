@@ -1,9 +1,10 @@
 .. NCI training documentation master file,
    created on Fri Sep 14 10:46:00 2018.
 
+.. image:: https://nci.org.au/sites/default/files/logos/Logo-NCI.svg
+   :width: 300
 
-.. image:: _static/images/NCI_logo.jpg
-  :width: 300
+\
 
 Welcome to NCI training documentation
 ========================================

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title> &mdash; NCI training 0.1 documentation</title>
+  <title>Accessing MT data from the NCI Geonetwork &mdash; NCI training 0.1 documentation</title>
   
 
   
@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Convert MT time-series to netCDF example" href="MT_notebooks/ascii_to_netCDFb.html" />
+    <link rel="next" title="Processing MT data on the NCI" href="MT_notebooks/MT_bulk_processing.html" />
     <link rel="prev" title="Welcome to NCI training documentation" href="../index.html" /> 
 
   
@@ -81,30 +81,28 @@
             
               <p class="caption"><span class="caption-text">Data access, processing and manipulation examples</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Magnetotellurics (MT) data</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#accessing-mt-data-from-the-nci-geonetwork">Accessing MT data from the NCI Geonetwork</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mt-software-available-at-nci">MT software available at NCI</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#birrp-conditions-of-use">BIRRP conditions of use:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#modem-conditions-of-use">ModEM conditions of use:</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Accessing MT data from the NCI Geonetwork</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#mt-software-available-at-nci">MT software available at NCI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#birrp-conditions-of-use">BIRRP conditions of use:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modem-conditions-of-use">ModEM conditions of use:</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#mt-software-on-raijin">MT software on Raijin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mt-software-on-the-nci-virtual-desktop-infrastructure-vdi">MT software on the NCI Virtual Desktop Infrastructure (VDI)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#time-series-qc-using-snuffler-a-miniseed-time-series-visualisation-tool">Time-series QC using snuffler, a miniSEED time-series visualisation tool</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#running-the-bounded-influence-remote-reference-processing-birrp-code-on-nci-s-vdi-and-raijin">Running the Bounded Influence, Remote Reference Processing (BIRRP) code on NCI’s VDI and Raijin</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#using-birrp-on-the-vdi">Using BIRRP on the VDI</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#using-birrp-on-raijin">Using BIRRP on Raijin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#mt-software-on-raijin">MT software on Raijin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#mt-software-on-the-nci-virtual-desktop-infrastructure-vdi">MT software on the NCI Virtual Desktop Infrastructure (VDI)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#time-series-qc-using-snuffler-a-miniseed-time-series-visualisation-tool">Time-series QC using snuffler, a miniSEED time-series visualisation tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-the-bounded-influence-remote-reference-processing-birrp-code-on-nci-s-vdi-and-raijin">Running the Bounded Influence, Remote Reference Processing (BIRRP) code on NCI’s VDI and Raijin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-birrp-on-the-vdi">Using BIRRP on the VDI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-birrp-on-raijin">Using BIRRP on Raijin</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#installing-and-using-mtpy-on-the-vdi">Installing and using MTpy on the VDI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#modem-3d-inversions">ModEM 3D inversions</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-and-using-mtpy-on-the-vdi">Installing and using MTpy on the VDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modem-3d-inversions">ModEM 3D inversions</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">MT Jupyter notebooks</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="MT_notebooks/MT_bulk_processing.html">Bulk time series processing at the NCI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MT_notebooks/ascii_to_netCDFb.html">Converting MT ASCII time series to NetCDF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MT_notebooks/MT_with_OPENDAPb.html">MT processing using OPeNDAP</a></li>
 </ul>
@@ -152,7 +150,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li></li>
+      <li>Accessing MT data from the NCI Geonetwork</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -190,11 +188,10 @@
     margin-right: 4px;  /* make room for the exclamation icon */
 }
 </style>
-<img alt="http://nci.org.au/wp-content/themes/nci/img/img-logo-large.png" src="http://nci.org.au/wp-content/themes/nci/img/img-logo-large.png" />
-<div class="section" id="id1">
-<h1><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<a class="reference internal image-reference" href="https://nci.org.au/sites/default/files/logos/Logo-NCI.svg"><img alt="https://nci.org.au/sites/default/files/logos/Logo-NCI.svg" src="https://nci.org.au/sites/default/files/logos/Logo-NCI.svg" width="300" /></a>
+<p></p>
 <div class="section" id="accessing-mt-data-from-the-nci-geonetwork">
-<h2>Accessing MT data from the NCI Geonetwork<a class="headerlink" href="#accessing-mt-data-from-the-nci-geonetwork" title="Permalink to this headline">¶</a></h2>
+<h1>Accessing MT data from the NCI Geonetwork<a class="headerlink" href="#accessing-mt-data-from-the-nci-geonetwork" title="Permalink to this headline">¶</a></h1>
 <p>For this example, we will access some of <strong>The University of Adelaide</strong> MT Data. To search for this, let’s visit the <a class="reference external" href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/home">NCI GeoNetwork</a></p>
 <img alt="../_images/NCI_geonetwork_1.png" src="../_images/NCI_geonetwork_1.png" />
 <p>Let’s begin by searching using the keyword <span class="red">magnetotellurics</span>:</p>
@@ -222,7 +219,7 @@
 <img alt="../_images/NCI_geonetwork_8.png" src="../_images/NCI_geonetwork_8.png" />
 </div>
 <div class="section" id="mt-software-available-at-nci">
-<h2>MT software available at NCI<a class="headerlink" href="#mt-software-available-at-nci" title="Permalink to this headline">¶</a></h2>
+<h1>MT software available at NCI<a class="headerlink" href="#mt-software-available-at-nci" title="Permalink to this headline">¶</a></h1>
 <dl class="docutils">
 <dt>The following MT software:</dt>
 <dd><ul class="first last simple">
@@ -240,7 +237,7 @@
 <strong>my80</strong> and request to join.</p>
 <p>Additionally, the seismogram browser <a class="reference external" href="https://pyrocko.org/docs/current/apps/snuffler/tutorial.html">Snuffler</a> is available on NCI’s VDI.</p>
 <div class="section" id="birrp-conditions-of-use">
-<h3>BIRRP conditions of use:<a class="headerlink" href="#birrp-conditions-of-use" title="Permalink to this headline">¶</a></h3>
+<h2>BIRRP conditions of use:<a class="headerlink" href="#birrp-conditions-of-use" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>1. The robust bounded influence magnetotelluric analysis program, hereinafter called BIRRP, is provided on a caveat emptor basis. The author of BIRRP is not responsible for or culpable in the event of errors in processing or interpretation resulting from use of this code.
 </p>
@@ -257,7 +254,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="modem-conditions-of-use">
-<h3>ModEM conditions of use:<a class="headerlink" href="#modem-conditions-of-use" title="Permalink to this headline">¶</a></h3>
+<h2>ModEM conditions of use:<a class="headerlink" href="#modem-conditions-of-use" title="Permalink to this headline">¶</a></h2>
 <p><strong>AUTHORS</strong></p>
 <blockquote>
 <div><div class="line-block">
@@ -332,7 +329,7 @@ a commercial product sold or licensed by, or on behalf of, User.</p>
 </div>
 </div>
 <div class="section" id="mt-software-on-raijin">
-<h2>MT software on Raijin<a class="headerlink" href="#mt-software-on-raijin" title="Permalink to this headline">¶</a></h2>
+<h1>MT software on Raijin<a class="headerlink" href="#mt-software-on-raijin" title="Permalink to this headline">¶</a></h1>
 <p>In order to use the Raijin MT software, let’s first login to Raijin:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh abc123@raijin.nci.org.au
 </pre></div>
@@ -432,7 +429,7 @@ $ mod3DMT
 </div>
 </div>
 <div class="section" id="mt-software-on-the-nci-virtual-desktop-infrastructure-vdi">
-<h2>MT software on the NCI Virtual Desktop Infrastructure (VDI)<a class="headerlink" href="#mt-software-on-the-nci-virtual-desktop-infrastructure-vdi" title="Permalink to this headline">¶</a></h2>
+<h1>MT software on the NCI Virtual Desktop Infrastructure (VDI)<a class="headerlink" href="#mt-software-on-the-nci-virtual-desktop-infrastructure-vdi" title="Permalink to this headline">¶</a></h1>
 <p>We can also access the MT software on the VDI. Once logged in to the VDI via Strudel (see the <a class="reference external" href="https://opus.nci.org.au/display/Help/VDI+User+Guide">VDI user guide</a> for installation instructions),
 open up a terminal and use a text editor (e.g. nano, emacs, vi) to edit your bashrc:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nano ~/.bashrc
@@ -469,7 +466,7 @@ $ module load snuffler
 </pre></div>
 </div>
 <div class="section" id="time-series-qc-using-snuffler-a-miniseed-time-series-visualisation-tool">
-<h3>Time-series QC using snuffler, a miniSEED time-series visualisation tool<a class="headerlink" href="#time-series-qc-using-snuffler-a-miniseed-time-series-visualisation-tool" title="Permalink to this headline">¶</a></h3>
+<h2>Time-series QC using snuffler, a miniSEED time-series visualisation tool<a class="headerlink" href="#time-series-qc-using-snuffler-a-miniseed-time-series-visualisation-tool" title="Permalink to this headline">¶</a></h2>
 <p><span class="blue">The Snuffler is an interactive and extensible seismogram browser (but can also be used to view MT time-series) that is suited for small and very big datasets and archives.</span></p>
 <p>For more information about Snuffler, please visit the <a class="reference external" href="https://pyrocko.org/v0.3/apps_snuffler.html">Snuffler manual</a></p>
 <p>For this example, we need to first log into NCI’s VDI. Once on the VDI, open up a terminal.</p>
@@ -500,12 +497,12 @@ $ module load snuffler
 <p>For a more detailed look at how to use snuffler, please visit this <a class="reference external" href="https://pyrocko.org/docs/current/apps/snuffler/tutorial.html">snuffler tutorial</a>.</p>
 </div>
 <div class="section" id="running-the-bounded-influence-remote-reference-processing-birrp-code-on-nci-s-vdi-and-raijin">
-<h3>Running the Bounded Influence, Remote Reference Processing (BIRRP) code on NCI’s VDI and Raijin<a class="headerlink" href="#running-the-bounded-influence-remote-reference-processing-birrp-code-on-nci-s-vdi-and-raijin" title="Permalink to this headline">¶</a></h3>
+<h2>Running the Bounded Influence, Remote Reference Processing (BIRRP) code on NCI’s VDI and Raijin<a class="headerlink" href="#running-the-bounded-influence-remote-reference-processing-birrp-code-on-nci-s-vdi-and-raijin" title="Permalink to this headline">¶</a></h2>
 <p>Once we are happy with the quality of our time-series, the next step is to run our time-series data processing. For this example, we will run the Bounded Influence, Remote Reference Processing (BIRRP) code of A.D. Chave and D.J. Thomsom.</p>
 <p>For those unfamiliar, the BIRRP program computes magnetotelluric and geomagnetic depth sounding response functions using a bounded influence, remote reference method, along with an implementation of the jackknife to get error estimates on the result. It incorporates a method for controlling leverage points (i.e., magnetic field values which are statistically anomalous), includes the implementation of two stage processing which enables removal of outliers in both the local electric and magnetic field variables, and allows multiple remote reference sites to be used.</p>
 <p>For more information about BIRRP and links to the relevant literature, please visit <a class="reference external" href="http://www.whoi.edu/science/AOPE/people/achave/Site/Next1.html">here</a></p>
 <div class="section" id="using-birrp-on-the-vdi">
-<h4>Using BIRRP on the VDI<a class="headerlink" href="#using-birrp-on-the-vdi" title="Permalink to this headline">¶</a></h4>
+<h3>Using BIRRP on the VDI<a class="headerlink" href="#using-birrp-on-the-vdi" title="Permalink to this headline">¶</a></h3>
 <p>A test dataset has been created with 16 MT sites and associated E/B time-series ready for BIRRP processing. Note that this test is mainly focusing on computational performance and not on the results of the BIRRP processing.</p>
 <p>BIRRP script files for sites B1-B16 can be found here:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd /g/data/my80/sandbox/capricorn_test/loop_test/
@@ -556,7 +553,7 @@ for f in /g/data/my80/sandbox/capricorn_test/loop_test/B*;
 <p>The job execution time for this script is approximately 4 minutes.</p>
 </div>
 <div class="section" id="using-birrp-on-raijin">
-<h4>Using BIRRP on Raijin<a class="headerlink" href="#using-birrp-on-raijin" title="Permalink to this headline">¶</a></h4>
+<h3>Using BIRRP on Raijin<a class="headerlink" href="#using-birrp-on-raijin" title="Permalink to this headline">¶</a></h3>
 <p>Let’s test our BIRRP processing script on Raijin using 16 cpus and 500MB of memory.</p>
 <p>Login to raijin and run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd /g/data/my80/sandbox/capricorn_test/loop_test/
@@ -596,7 +593,7 @@ for f in /g/data/my80/sandbox/capricorn_test/loop_test/B*;
 </div>
 </div>
 <div class="section" id="installing-and-using-mtpy-on-the-vdi">
-<h3>Installing and using MTpy on the VDI<a class="headerlink" href="#installing-and-using-mtpy-on-the-vdi" title="Permalink to this headline">¶</a></h3>
+<h2>Installing and using MTpy on the VDI<a class="headerlink" href="#installing-and-using-mtpy-on-the-vdi" title="Permalink to this headline">¶</a></h2>
 <p><span class="blue">MTpy: A Python Toolbox for Magnetotelluric (MT) Data Processing, Analysis, Modelling and Visualization</span></p>
 <p>Written in Python, the code is open source, containing sub-packages and modules for various tasks within the standard MT data processing and handling scheme. For more information on MTpy, please read:</p>
 <p><a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0098300414001794">Krieger and Peacock 2014</a>. MTpy: A Python toolbox for magnetotellurics. Computers &amp; Geosciences, 72, 167-175.</p>
@@ -720,7 +717,7 @@ $ python setup.py develop
 <p>If this works then MTpy has been successfully installed.</p>
 </div>
 <div class="section" id="modem-3d-inversions">
-<h3>ModEM 3D inversions<a class="headerlink" href="#modem-3d-inversions" title="Permalink to this headline">¶</a></h3>
+<h2>ModEM 3D inversions<a class="headerlink" href="#modem-3d-inversions" title="Permalink to this headline">¶</a></h2>
 <p><span class="blue">Modular EM (ModEM) is a flexible electromagnetic modelling and inversion program written in Fortran 95.</span></p>
 <p>It is currently available to use with 2D and 3D MT problems. For more information about ModEM, please read:</p>
 <p>Kelbert, A., Meqbel, N., Egbert, G.D. and Tandon, K., 2014. ModEM: A modular system for inversion of electromagnetic geophysical data. Computers &amp; Geosciences, 66, pp.40-53. - <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0098300414000211">Kelbert et al. link</a></p>
@@ -803,7 +800,6 @@ $ qstat -fx &lt;jobID&gt;
 <p><strong>This material uses</strong> <a class="reference external" href="https://geonetwork.nci.org.au/geonetwork/srv/eng/catalog.search#/metadata/f4237_9555_3315_5547">The University of Adelaide Magnetotellurics Data Collection</a> <strong>which is available under the</strong> <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons License 4.0</a>.</p>
 </div>
 </div>
-</div>
 
 
            </div>
@@ -813,7 +809,7 @@ $ qstat -fx &lt;jobID&gt;
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="MT_notebooks/ascii_to_netCDFb.html" class="btn btn-neutral float-right" title="Convert MT time-series to netCDF example" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="MT_notebooks/MT_bulk_processing.html" class="btn btn-neutral float-right" title="Processing MT data on the NCI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../index.html" class="btn btn-neutral" title="Welcome to NCI training documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
