@@ -4,8 +4,15 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "![](http://nci.org.au/wp-content/themes/nci/img/img-logo-large.png)\n",
-    "\n",
+    "<div>\n",
+    "<img src=\"https://nci.org.au/sites/default/files/logos/Logo-NCI.svg\" width=\"300\" align=\"left\"/>\n",
+    "</div>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
     "\n",
     "# Processing MT data on the NCI\n",
     "\n",
@@ -459,9 +466,7 @@
   {
    "cell_type": "code",
    "execution_count": 8,
-   "metadata": {
-    "collapsed": false
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "#!/usr/bin/env python2.7\n",
@@ -575,9 +580,7 @@
   {
    "cell_type": "code",
    "execution_count": 11,
-   "metadata": {
-    "collapsed": false
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "%%writefile nci_birrp.py\n",
@@ -903,9 +906,7 @@
   {
    "cell_type": "code",
    "execution_count": 12,
-   "metadata": {
-    "collapsed": false
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "%%writefile proc_site.py\n",
@@ -958,9 +959,7 @@
   {
    "cell_type": "code",
    "execution_count": 13,
-   "metadata": {
-    "collapsed": false
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "%run nci_birrp.py\n",
@@ -981,9 +980,7 @@
   {
    "cell_type": "code",
    "execution_count": 14,
-   "metadata": {
-    "collapsed": false
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "%%bash\n",
@@ -1002,9 +999,9 @@
  ],
  "metadata": {
   "kernelspec": {
-   "display_name": "Python 2",
+   "display_name": "MTpy",
    "language": "python",
-   "name": "python2"
+   "name": "mtpy"
   },
   "language_info": {
    "codemirror_mode": {
@@ -1016,7 +1013,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython2",
-   "version": "2.7.11"
+   "version": "2.7.15"
   }
  },
  "nbformat": 4,

@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Convert MT time-series to netCDF example" href="ascii_to_netCDF.html" /> 
+    <link rel="prev" title="Convert MT time-series to netCDF example" href="ascii_to_netCDFb.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -80,11 +80,15 @@
             
               <p class="caption"><span class="caption-text">Data access, processing and manipulation examples</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../MT_data_examples.html">Magnetotellurics (MT) data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MT_data_examples.html">Accessing MT data from the NCI Geonetwork</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MT_data_examples.html#mt-software-available-at-nci">MT software available at NCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MT_data_examples.html#mt-software-on-raijin">MT software on Raijin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MT_data_examples.html#mt-software-on-the-nci-virtual-desktop-infrastructure-vdi">MT software on the NCI Virtual Desktop Infrastructure (VDI)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">MT Jupyter notebooks</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="ascii_to_netCDF.html">Converting MT ASCII time series to NetCDF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MT_bulk_processing.html">Bulk time series processing at the NCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ascii_to_netCDFb.html">Converting MT ASCII time series to NetCDF</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">MT processing using OPeNDAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Converting-BIRRP-outputs-to-an-EDI-file">Converting BIRRP outputs to an EDI file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Plotting-EDI-using-MTpy">Plotting EDI using MTpy</a></li>
@@ -337,10 +341,7 @@ div.nboutput div.output_area.stderr {
     margin-right: 4px;  /* make room for the exclamation icon */
 }
 </style>
-<div class="figure">
-<img alt="" src="http://nci.org.au/wp-content/themes/nci/img/img-logo-large.png" />
-</div>
-<div class="section" id="Processing-MT-netCDF-files-using-OPeNDAP">
+<div></div><div class="section" id="Processing-MT-netCDF-files-using-OPeNDAP">
 <h1>Processing MT netCDF files using OPeNDAP<a class="headerlink" href="#Processing-MT-netCDF-files-using-OPeNDAP" title="Permalink to this headline">¶</a></h1>
 <p><strong>In this example, we will utilise OPeNDAP services to access and
 process raw MT time-series that are stored as netCDF files on NCI’s
@@ -534,7 +535,7 @@ Shape:          (82800000,)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/_MT_MT_notebooks_MT_with_OPENDAPb_13_1.png" src="../../_images/_MT_MT_notebooks_MT_with_OPENDAPb_13_1.png" />
+<img alt="../../_images/_MT_MT_notebooks_MT_with_OPENDAPb_14_1.png" src="../../_images/_MT_MT_notebooks_MT_with_OPENDAPb_14_1.png" />
 </div>
 </div>
 <p><strong>Now let’s write TS ascii files that are ready for BIRRP processing</strong></p>
@@ -1027,7 +1028,7 @@ mtpy/imaging/mtplottools.py:392: FutureWarning: comparison to `None` will result
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/_MT_MT_notebooks_MT_with_OPENDAPb_50_2.png" src="../../_images/_MT_MT_notebooks_MT_with_OPENDAPb_50_2.png" />
+<img alt="../../_images/_MT_MT_notebooks_MT_with_OPENDAPb_51_2.png" src="../../_images/_MT_MT_notebooks_MT_with_OPENDAPb_51_2.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -1047,7 +1048,7 @@ mtpy/imaging/mtplottools.py:392: FutureWarning: comparison to `None` will result
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/_MT_MT_notebooks_MT_with_OPENDAPb_51_0.png" src="../../_images/_MT_MT_notebooks_MT_with_OPENDAPb_51_0.png" />
+<img alt="../../_images/_MT_MT_notebooks_MT_with_OPENDAPb_52_0.png" src="../../_images/_MT_MT_notebooks_MT_with_OPENDAPb_52_0.png" />
 </div>
 </div>
 </div>
@@ -1062,7 +1063,7 @@ mtpy/imaging/mtplottools.py:392: FutureWarning: comparison to `None` will result
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="ascii_to_netCDF.html" class="btn btn-neutral" title="Convert MT time-series to netCDF example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ascii_to_netCDFb.html" class="btn btn-neutral" title="Convert MT time-series to netCDF example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
