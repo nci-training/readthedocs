@@ -23,5 +23,7 @@ Our training documentation provides tutorials on how to use commonly available t
   :maxdepth: 2
 
   Bulk time series processing at the NCI <_MT/MT_notebooks/MT_bulk_processing>
+  Accessing MT time series data from the NCI THREDDS Data Server using OPeNDAP <_MT/MT_notebooks/THREDDS_OPeNDAP_crawler_my80_time_series>
   Converting MT ASCII time series to NetCDF <_MT/MT_notebooks/ascii_to_netCDFb>
   MT processing using OPeNDAP <_MT/MT_notebooks/MT_with_OPENDAPb>
+  

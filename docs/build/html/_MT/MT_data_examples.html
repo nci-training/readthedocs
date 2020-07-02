@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,44 +11,49 @@
   
 
   
-  
-  
-  
-
-  
-
-  
-  
-    
-
-  
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Processing MT data on the NCI" href="MT_notebooks/MT_bulk_processing.html" />
     <link rel="prev" title="Welcome to NCI training documentation" href="../index.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
-            <a href="../index.html" class="icon icon-home"> NCI training
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> NCI training
           
 
           
@@ -72,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -103,6 +108,7 @@
 <p class="caption"><span class="caption-text">MT Jupyter notebooks</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="MT_notebooks/MT_bulk_processing.html">Bulk time series processing at the NCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MT_notebooks/THREDDS_OPeNDAP_crawler_my80_time_series.html">Accessing MT time series data from the NCI THREDDS Data Server using OPeNDAP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MT_notebooks/ascii_to_netCDFb.html">Converting MT ASCII time series to NetCDF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MT_notebooks/MT_with_OPENDAPb.html">MT processing using OPeNDAP</a></li>
 </ul>
@@ -110,6 +116,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -148,7 +155,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Accessing MT data from the NCI Geonetwork</li>
     
@@ -174,18 +181,23 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
 .admonition > p:before {
     margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
 }
 </style>
 <a class="reference internal image-reference" href="https://nci.org.au/sites/default/files/logos/Logo-NCI.svg"><img alt="https://nci.org.au/sites/default/files/logos/Logo-NCI.svg" src="https://nci.org.au/sites/default/files/logos/Logo-NCI.svg" width="300" /></a>
@@ -207,12 +219,11 @@
 <img alt="../_images/NCI_geonetwork_6.png" src="../_images/NCI_geonetwork_6.png" />
 <p>Let’s click on a survey of interest:</p>
 <img alt="../_images/NCI_geonetwork_7.png" src="../_images/NCI_geonetwork_7.png" />
-<dl class="docutils">
-<dt>Here we can see:</dt>
-<dd><ol class="first last arabic simple">
-<li>an abstract describing the dataset</li>
-<li>http download of the EDI files for this dataset</li>
-<li>links to any papers or reference material associated with this dataset</li>
+<dl class="simple">
+<dt>Here we can see:</dt><dd><ol class="arabic simple">
+<li><p>an abstract describing the dataset</p></li>
+<li><p>http download of the EDI files for this dataset</p></li>
+<li><p>links to any papers or reference material associated with this dataset</p></li>
 </ol>
 </dd>
 </dl>
@@ -220,15 +231,14 @@
 </div>
 <div class="section" id="mt-software-available-at-nci">
 <h1>MT software available at NCI<a class="headerlink" href="#mt-software-available-at-nci" title="Permalink to this headline">¶</a></h1>
-<dl class="docutils">
-<dt>The following MT software:</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="http://www.whoi.edu/science/AOPE/people/achave/Site/Next1.html">BIRRP</a></li>
-<li><a class="reference external" href="http://marineemlab.ucsd.edu/Projects/Occam/1DCSEM/">OCCAM1DCSEM</a></li>
-<li><a class="reference external" href="http://marineemlab.ucsd.edu/Projects/Occam/1DCSEM/">DIPOLE1D</a></li>
-<li><a class="reference external" href="http://marineemlab.ucsd.edu/Projects/Occam/2DMT/index.html">OCCAM2DMT</a></li>
-<li><a class="reference external" href="http://mare2dem.ucsd.edu/">MARE2DEM</a></li>
-<li><a class="reference external" href="http://www.modem-geophysics.com/">ModEM</a></li>
+<dl class="simple">
+<dt>The following MT software:</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="http://www.whoi.edu/science/AOPE/people/achave/Site/Next1.html">BIRRP</a></p></li>
+<li><p><a class="reference external" href="http://marineemlab.ucsd.edu/Projects/Occam/1DCSEM/">OCCAM1DCSEM</a></p></li>
+<li><p><a class="reference external" href="http://marineemlab.ucsd.edu/Projects/Occam/1DCSEM/">DIPOLE1D</a></p></li>
+<li><p><a class="reference external" href="http://marineemlab.ucsd.edu/Projects/Occam/2DMT/index.html">OCCAM2DMT</a></p></li>
+<li><p><a class="reference external" href="http://mare2dem.ucsd.edu/">MARE2DEM</a></p></li>
+<li><p><a class="reference external" href="http://www.modem-geophysics.com/">ModEM</a></p></li>
 </ul>
 </dd>
 </dl>
@@ -632,7 +642,7 @@ $ ipython
 <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="n">survey_configfile</span> <span class="o">=</span> <span class="s1">&#39;/g/data/my80/sandbox/capricorn_test/loop_test/2M/M1/survey.cfg&#39;</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="n">in_dir</span> <span class="o">=</span> <span class="s1">&#39;/g/data/my80/sandbox/capricorn_test/loop_test/2M/M1/&#39;</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="n">birrp_configfile</span> <span class="o">=</span> <span class="s1">&#39;/g/data/my80/sandbox/capricorn_test/loop_test/2M/M1/CP1.script&#39;</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="n">convert2edi</span><span class="p">(</span><span class="n">stationname</span><span class="p">,</span> <span class="n">in_dir</span><span class="p">,</span> <span class="n">survey_configfile</span><span class="p">,</span> <span class="n">birrp_configfile</span><span class="p">,</span> <span class="n">out_dir</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="n">convert2edi</span><span class="p">(</span><span class="n">stationname</span><span class="p">,</span> <span class="n">in_dir</span><span class="p">,</span> <span class="n">survey_configfile</span><span class="p">,</span> <span class="n">birrp_configfile</span><span class="p">,</span> <span class="n">out_dir</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This should create the following edi file:</p>
@@ -643,17 +653,17 @@ $ ipython
 <p>This is the most up to date version of MTpy and will take up approximately 370MB of disk space. Additionally, a virtual environment needs to be created in order to install some of the dependencies, which will take up approximately 190 MB of disk space. This version of MTpy requires the following dependencies:</p>
 <blockquote>
 <div><ul class="simple">
-<li>matplotlib&gt;=2.02</li>
-<li>numpy</li>
-<li>PyYAML&gt;=3.11</li>
-<li>(geo)pandas</li>
-<li>scipy</li>
-<li>pillow</li>
-<li>pyqt</li>
-<li>qtpy</li>
-<li>obspy</li>
-<li>netcdf4</li>
-<li>numpydoc&gt;=0.7.0</li>
+<li><p>matplotlib&gt;=2.02</p></li>
+<li><p>numpy</p></li>
+<li><p>PyYAML&gt;=3.11</p></li>
+<li><p>(geo)pandas</p></li>
+<li><p>scipy</p></li>
+<li><p>pillow</p></li>
+<li><p>pyqt</p></li>
+<li><p>qtpy</p></li>
+<li><p>obspy</p></li>
+<li><p>netcdf4</p></li>
+<li><p>numpydoc&gt;=0.7.0</p></li>
 </ul>
 </div></blockquote>
 <p>To install:</p>
@@ -711,7 +721,7 @@ $ python setup.py develop
 </pre></div>
 </div>
 <p>To test, open up an ipython terminal:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">mtpy.processing.birrp</span> <span class="kn">as</span> <span class="nn">birrp</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">mtpy.processing.birrp</span> <span class="k">as</span> <span class="nn">birrp</span>
 </pre></div>
 </div>
 <p>If this works then MTpy has been successfully installed.</p>
@@ -812,7 +822,7 @@ $ qstat -fx &lt;jobID&gt;
         <a href="MT_notebooks/MT_bulk_processing.html" class="btn btn-neutral float-right" title="Processing MT data on the NCI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral" title="Welcome to NCI training documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to NCI training documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -821,11 +831,19 @@ $ qstat -fx &lt;jobID&gt;
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, NCI.
+        
+        &copy; Copyright 2018, NCI
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -837,34 +855,16 @@ $ qstat -fx &lt;jobID&gt;
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0.1',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
