@@ -26,4 +26,13 @@ Our training documentation provides tutorials on how to use commonly available t
   Accessing MT time series data from the NCI THREDDS Data Server using OPeNDAP <_MT/MT_notebooks/THREDDS_OPeNDAP_crawler_my80_time_series>
   Converting MT ASCII time series to NetCDF <_MT/MT_notebooks/ascii_to_netCDFb>
   MT processing using OPeNDAP <_MT/MT_notebooks/MT_with_OPENDAPb>
+
+.. toctree::
+  :caption: Examples of accessing geophysical datasets using GSKY
+  :maxdepth: 2
+
+  ASTER WMS example <_MT/MT_notebooks/Notebook_GSKY_ASTER_WMS>
+  ASTER WCS example <_MT/MT_notebooks/Notebook_GSKY_ASTER_WCS>
+  National Geophysical Compilations WMS example <_MT/MT_notebooks/Notebook_GSKY_National_Geophysical_Compilations_WMS>
+  National Geophysical Compilations WCS example <_MT/MT_notebooks/Notebook_GSKY_National_Geophysical_Compilations_WCS>
   
