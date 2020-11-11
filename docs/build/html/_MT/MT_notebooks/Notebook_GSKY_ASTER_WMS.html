@@ -427,7 +427,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div><p><img alt="066f983b8dd44c19acfc5d95f07f2d93" class="no-scaled-link" src="https://nci.org.au/sites/default/files/logos/Logo-NCI.svg" width="300" /></p>
+<div><p><img alt="c55e569d92484ba5872e57c6917e3d62" class="no-scaled-link" src="https://nci.org.au/sites/default/files/logos/Logo-NCI.svg" width="300" /></p>
 </div><div class="section" id="Requesting-ASTER-map-images-through-NCI’s-GSKY-Data-Server">
 <h1>Requesting ASTER map images through NCI’s GSKY Data Server<a class="headerlink" href="#Requesting-ASTER-map-images-through-NCI’s-GSKY-Data-Server" title="Permalink to this headline">¶</a></h1>
 <p>NCI’s GSKY Data Server supports the Open Geospatial Consortium (OGC) Web Map Service (WMS), which is a standard protocol for serving geospatial data as images (e.g., PNG).</p>
@@ -698,7 +698,7 @@ Time Positions:
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">output</span> <span class="o">=</span> <span class="n">wms</span><span class="o">.</span><span class="n">getmap</span><span class="p">(</span><span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">layer</span><span class="p">],</span>
-                        <span class="n">srs</span><span class="o">=</span><span class="n">crs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                        <span class="n">srs</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">,</span>
                         <span class="n">bbox</span><span class="o">=</span><span class="p">(</span><span class="n">subset_bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">subset_bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">subset_bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">subset_bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span>
                         <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">),</span>
                         <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;image/png&#39;</span><span class="p">,</span>
@@ -755,7 +755,7 @@ http://gsky.nci.org.au/ows/aster?SERVICE=WMS&amp;service=WMS&amp;version=1.3.0&a
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.image.AxesImage at 0x121628b38&gt;
+&lt;matplotlib.image.AxesImage at 0x11b3f5b00&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
