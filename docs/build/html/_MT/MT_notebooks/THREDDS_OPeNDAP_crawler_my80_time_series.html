@@ -30,16 +30,13 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Convert MT time-series to netCDF example" href="ascii_to_netCDFb.html" />
-    <link rel="prev" title="Processing MT data on the NCI" href="MT_bulk_processing.html" /> 
+    <link rel="search" title="Search" href="../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,39 +81,22 @@
               
             
             
-              <p class="caption"><span class="caption-text">Data access, processing and manipulation examples</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../MT_data_examples.html">Accessing MT data from the NCI Geonetwork</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MT_data_examples.html#mt-software-available-at-nci">MT software available at NCI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MT_data_examples.html#mt-software-on-raijin">MT software on Raijin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MT_data_examples.html#mt-software-on-the-nci-virtual-desktop-infrastructure-vdi">MT software on the NCI Virtual Desktop Infrastructure (VDI)</a></li>
-</ul>
-<p class="caption"><span class="caption-text">MT Jupyter notebooks</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="MT_bulk_processing.html">Bulk time series processing at the NCI</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Accessing MT time series data from the NCI THREDDS Data Server using OPeNDAP</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Requirements">Requirements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Import-libraries">Import libraries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Run-a-crawl-on-the-NCI-THREDDS-Data-Server-AusLAMP-Musgraves-MT-time-series-endpoint-xml.">Run a crawl on the NCI THREDDS Data Server AusLAMP Musgraves MT time series endpoint xml.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Using-OPeNDAP-to-view-MT-time-series-metadata-and-data">Using OPeNDAP to view MT time series metadata and data</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Let’s-try-and-process-some-time-series-in-the-frequency-domain-using-the-Bounded-Influence,-Remote-Reference-Processing-(BIRRP)-code.">Let’s try and process some time series in the frequency domain using the Bounded Influence, Remote Reference Processing (BIRRP) code.</a></li>
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Accessing MT time series data from the NCI THREDDS Data Server using OPeNDAP</a><ul>
+<li><a class="reference internal" href="#Requirements">Requirements</a><ul>
+<li><a class="reference internal" href="#Import-libraries">Import libraries</a></li>
+<li><a class="reference internal" href="#Run-a-crawl-on-the-NCI-THREDDS-Data-Server-AusLAMP-Musgraves-MT-time-series-endpoint-xml.">Run a crawl on the NCI THREDDS Data Server AusLAMP Musgraves MT time series endpoint xml.</a></li>
+<li><a class="reference internal" href="#Using-OPeNDAP-to-view-MT-time-series-metadata-and-data">Using OPeNDAP to view MT time series metadata and data</a><ul>
+<li><a class="reference internal" href="#Let’s-try-and-process-some-time-series-in-the-frequency-domain-using-the-Bounded-Influence,-Remote-Reference-Processing-(BIRRP)-code.">Let’s try and process some time series in the frequency domain using the Bounded Influence, Remote Reference Processing (BIRRP) code.</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="ascii_to_netCDFb.html">Converting MT ASCII time series to NetCDF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MT_with_OPENDAPb.html">MT processing using OPeNDAP</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Examples of accessing geophysical datasets using GSKY</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Notebook_GSKY_ASTER_WMS.html">ASTER WMS example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notebook_GSKY_ASTER_WCS.html">ASTER WCS example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notebook_GSKY_National_Geophysical_Compilations_WMS.html">National Geophysical Compilations WMS example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notebook_GSKY_National_Geophysical_Compilations_WCS.html">National Geophysical Compilations WCS example</a></li>
-</ul>
-
+</div>
             
           
         </div>
@@ -1187,15 +1167,6 @@ SA271_rrSA272.1r1.tf         SA271_rrSA272.2r1.tf
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="ascii_to_netCDFb.html" class="btn btn-neutral float-right" title="Convert MT time-series to netCDF example" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="MT_bulk_processing.html" class="btn btn-neutral float-left" title="Processing MT data on the NCI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

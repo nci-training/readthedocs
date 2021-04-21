@@ -30,16 +30,13 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Requesting ASTER data subsets through NCI’s GSKY Data Server" href="Notebook_GSKY_ASTER_WCS.html" />
-    <link rel="prev" title="Processing MT netCDF files using OPeNDAP" href="MT_with_OPENDAPb.html" /> 
+    <link rel="search" title="Search" href="../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,31 +81,14 @@
               
             
             
-              <p class="caption"><span class="caption-text">Data access, processing and manipulation examples</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../MT_data_examples.html">Accessing MT data from the NCI Geonetwork</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MT_data_examples.html#mt-software-available-at-nci">MT software available at NCI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MT_data_examples.html#mt-software-on-raijin">MT software on Raijin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MT_data_examples.html#mt-software-on-the-nci-virtual-desktop-infrastructure-vdi">MT software on the NCI Virtual Desktop Infrastructure (VDI)</a></li>
-</ul>
-<p class="caption"><span class="caption-text">MT Jupyter notebooks</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="MT_bulk_processing.html">Bulk time series processing at the NCI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="THREDDS_OPeNDAP_crawler_my80_time_series.html">Accessing MT time series data from the NCI THREDDS Data Server using OPeNDAP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ascii_to_netCDFb.html">Converting MT ASCII time series to NetCDF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MT_with_OPENDAPb.html">MT processing using OPeNDAP</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Examples of accessing geophysical datasets using GSKY</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">ASTER WMS example</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Using-GSKY’s-WMS-in-Python">Using GSKY’s WMS in Python</a></li>
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Requesting ASTER map images through NCI’s GSKY Data Server</a><ul>
+<li><a class="reference internal" href="#Using-GSKY’s-WMS-in-Python">Using GSKY’s WMS in Python</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Notebook_GSKY_ASTER_WCS.html">ASTER WCS example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notebook_GSKY_National_Geophysical_Compilations_WMS.html">National Geophysical Compilations WMS example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notebook_GSKY_National_Geophysical_Compilations_WCS.html">National Geophysical Compilations WCS example</a></li>
 </ul>
-
+</div>
             
           
         </div>
@@ -427,7 +407,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div><p><img alt="c55e569d92484ba5872e57c6917e3d62" class="no-scaled-link" src="https://nci.org.au/sites/default/files/logos/Logo-NCI.svg" width="300" /></p>
+<div><p><img alt="db9da71e8b994165b9ab16efc15d4db2" class="no-scaled-link" src="https://nci.org.au/sites/default/files/logos/Logo-NCI.svg" width="300" /></p>
 </div><div class="section" id="Requesting-ASTER-map-images-through-NCI’s-GSKY-Data-Server">
 <h1>Requesting ASTER map images through NCI’s GSKY Data Server<a class="headerlink" href="#Requesting-ASTER-map-images-through-NCI’s-GSKY-Data-Server" title="Permalink to this headline">¶</a></h1>
 <p>NCI’s GSKY Data Server supports the Open Geospatial Consortium (OGC) Web Map Service (WMS), which is a standard protocol for serving geospatial data as images (e.g., PNG).</p>
@@ -776,15 +756,6 @@ http://gsky.nci.org.au/ows/aster?SERVICE=WMS&amp;service=WMS&amp;version=1.3.0&a
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="Notebook_GSKY_ASTER_WCS.html" class="btn btn-neutral float-right" title="Requesting ASTER data subsets through NCI’s GSKY Data Server" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="MT_with_OPENDAPb.html" class="btn btn-neutral float-left" title="Processing MT netCDF files using OPeNDAP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

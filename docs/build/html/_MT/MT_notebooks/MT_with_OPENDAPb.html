@@ -30,16 +30,13 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Requesting ASTER map images through NCI’s GSKY Data Server" href="Notebook_GSKY_ASTER_WMS.html" />
-    <link rel="prev" title="Convert MT time-series to netCDF example" href="ascii_to_netCDFb.html" /> 
+    <link rel="search" title="Search" href="../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,32 +81,15 @@
               
             
             
-              <p class="caption"><span class="caption-text">Data access, processing and manipulation examples</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../MT_data_examples.html">Accessing MT data from the NCI Geonetwork</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MT_data_examples.html#mt-software-available-at-nci">MT software available at NCI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MT_data_examples.html#mt-software-on-raijin">MT software on Raijin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MT_data_examples.html#mt-software-on-the-nci-virtual-desktop-infrastructure-vdi">MT software on the NCI Virtual Desktop Infrastructure (VDI)</a></li>
-</ul>
-<p class="caption"><span class="caption-text">MT Jupyter notebooks</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="MT_bulk_processing.html">Bulk time series processing at the NCI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="THREDDS_OPeNDAP_crawler_my80_time_series.html">Accessing MT time series data from the NCI THREDDS Data Server using OPeNDAP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ascii_to_netCDFb.html">Converting MT ASCII time series to NetCDF</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">MT processing using OPeNDAP</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Converting-BIRRP-outputs-to-an-EDI-file">Converting BIRRP outputs to an EDI file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Plotting-EDI-using-MTpy">Plotting EDI using MTpy</a></li>
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Processing MT netCDF files using OPeNDAP</a><ul>
+<li><a class="reference internal" href="#Converting-BIRRP-outputs-to-an-EDI-file">Converting BIRRP outputs to an EDI file</a></li>
+<li><a class="reference internal" href="#Plotting-EDI-using-MTpy">Plotting EDI using MTpy</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Examples of accessing geophysical datasets using GSKY</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Notebook_GSKY_ASTER_WMS.html">ASTER WMS example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notebook_GSKY_ASTER_WCS.html">ASTER WCS example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notebook_GSKY_National_Geophysical_Compilations_WMS.html">National Geophysical Compilations WMS example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notebook_GSKY_National_Geophysical_Compilations_WCS.html">National Geophysical Compilations WCS example</a></li>
-</ul>
-
+</div>
             
           
         </div>
@@ -428,7 +408,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div><p><img alt="32f9c17157674741adc2ce650d876018" class="no-scaled-link" src="https://nci.org.au/sites/default/files/logos/Logo-NCI.svg" width="300" /></p>
+<div><p><img alt="752487bf10d94529b40b70a257995026" class="no-scaled-link" src="https://nci.org.au/sites/default/files/logos/Logo-NCI.svg" width="300" /></p>
 </div><div class="section" id="Processing-MT-netCDF-files-using-OPeNDAP">
 <h1>Processing MT netCDF files using OPeNDAP<a class="headerlink" href="#Processing-MT-netCDF-files-using-OPeNDAP" title="Permalink to this headline">¶</a></h1>
 <p><strong>In this example, we will utilise OPeNDAP services to access and process raw MT time-series that are stored as netCDF files on NCI’s THREDDS data server.</strong></p>
@@ -804,7 +784,7 @@ Wall time: 5.52 s
 <div class="input_area highlight-bash notranslate"><div class="highlight"><pre>
 <span></span>%%bash
 
-<span class="k">for</span> i in ex ey bx by<span class="p">;</span>
+<span class="k">for</span> i <span class="k">in</span> ex ey bx by<span class="p">;</span>
 <span class="k">do</span>
     sed -i -e 1d <span class="s2">&quot;</span><span class="nv">$i</span><span class="s2">&quot;</span> <span class="p">&amp;</span>
 <span class="k">done</span>
@@ -820,7 +800,7 @@ Wall time: 5.52 s
 <div class="input_area highlight-bash notranslate"><div class="highlight"><pre>
 <span></span>%%bash
 
-<span class="k">for</span> i in bx by ex ey<span class="p">;</span>
+<span class="k">for</span> i <span class="k">in</span> bx by ex ey<span class="p">;</span>
 <span class="k">do</span>
     wc <span class="s2">&quot;</span><span class="nv">$i</span><span class="s2">&quot;</span> <span class="p">&amp;</span>
 <span class="k">done</span>
@@ -1103,15 +1083,6 @@ mtpy/imaging/mtplottools.py:392: FutureWarning: comparison to `None` will result
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="Notebook_GSKY_ASTER_WMS.html" class="btn btn-neutral float-right" title="Requesting ASTER map images through NCI’s GSKY Data Server" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="ascii_to_netCDFb.html" class="btn btn-neutral float-left" title="Convert MT time-series to netCDF example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
